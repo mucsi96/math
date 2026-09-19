@@ -1,0 +1,192 @@
+{
+  "title": "Mathe-Knobelei",
+  "subtitle": "Klasse 2 · Regionalrunde 2014",
+  "source_competition": "Zrínyi Ilona Matematikaverseny",
+  "source_round": "Megyei forduló",
+  "source_year": 2014,
+  "source_grade": 2,
+  "published_answer_key": "DCBCD EBBEC BDCBC DCDBD ABCEB",
+  "exercises": [
+    {
+      "number": 1,
+      "text": "Auf vier Bildern siehst du dasselbe Tier. Auf einem Bild ist ein anderes Tier zu sehen. Welches Bild ist das?",
+      "diagram": "animals",
+      "options": ["Bild A", "Bild B", "Bild C", "Bild D", "Bild E"],
+      "answer": "D",
+      "solution": "Auf Bild D ist ein Löwe zu sehen. Die anderen vier Bilder zeigen dasselbe Nilpferd, nur unterschiedlich gedreht."
+    },
+    {
+      "number": 2,
+      "text": "Wie oft kommt der Buchstabe K im Städtenamen KALKAR vor?",
+      "options": ["0", "1", "2", "3", "4"],
+      "answer": "C",
+      "solution": "KALKAR hat zwei K: an der ersten und an der vierten Stelle."
+    },
+    {
+      "number": 3,
+      "text": "Welche Zahl steht für das lachende Gesicht? Beide Gesichter stehen für dieselbe Zahl.",
+      "diagram": "smile_sum",
+      "options": ["2", "3", "4", "5", "7"],
+      "answer": "B",
+      "solution": "3 + 3 = 6. Ein Gesicht steht also für die Zahl 3."
+    },
+    {
+      "number": 4,
+      "text": "Beim Schulfasching isst Ben zwei Berliner weniger als fünf. Wie viele Berliner isst Ben?",
+      "options": ["1", "2", "3", "5", "7"],
+      "answer": "C",
+      "solution": "Fünf weniger zwei sind drei: 5 − 2 = 3."
+    },
+    {
+      "number": 5,
+      "text": "Welche Aussage stimmt?",
+      "options": ["9 − 7 = 4", "8 < 6", "8 − 8 = 8", "9 > 2", "10 = 6 + 3"],
+      "answer": "D",
+      "solution": "9 ist größer als 2. Die anderen Aussagen sind falsch: 9 − 7 = 2; 8 > 6; 8 − 8 = 0; 6 + 3 = 9."
+    },
+    {
+      "number": 6,
+      "text": "Welcher Wochentag ist morgen, wenn gestern Donnerstag war?",
+      "options": ["Montag", "Dienstag", "Mittwoch", "Freitag", "Samstag"],
+      "answer": "E",
+      "solution": "Gestern war Donnerstag, heute ist Freitag und morgen ist Samstag."
+    },
+    {
+      "number": 7,
+      "text": "Wie viele Dreiecke mehr als Kreise sind auf dem Bild zu sehen?",
+      "diagram": "triangles_circles",
+      "options": ["0", "1", "2", "3", "5"],
+      "answer": "B",
+      "solution": "Es gibt 6 Dreiecke und 5 Kreise. Der Unterschied ist 6 − 5 = 1."
+    },
+    {
+      "number": 8,
+      "text": "Sarah verbringt eine Woche und zwei Tage bei ihren Großeltern. Wie viele Tage sind das insgesamt?",
+      "options": ["3", "9", "10", "12", "14"],
+      "answer": "B",
+      "solution": "Eine Woche hat 7 Tage. Dazu kommen 2 Tage: 7 + 2 = 9."
+    },
+    {
+      "number": 9,
+      "text": "Das Bild zeigt den Boden von Felix’ Zimmer. Er legt den ganzen Boden mit quadratischen Fliesen aus. Jede Fliese ist so groß wie ein kleines Kästchen. Wie viele Fliesen braucht er?",
+      "diagram": "floor_grid",
+      "options": ["10", "12", "14", "15", "16"],
+      "answer": "E",
+      "solution": "In jeder der 4 Reihen liegen 4 Fliesen. Das sind 4 + 4 + 4 + 4 = 16 Fliesen."
+    },
+    {
+      "number": 10,
+      "text": "Schneewittchen hat 47 Heidelbeeren gesammelt. Das sind 9 mehr als beim Zwerg Niesbert. Wie viele Heidelbeeren hat Niesbert gesammelt?",
+      "options": ["27", "28", "38", "39", "56"],
+      "answer": "C",
+      "solution": "Niesbert hat 9 Beeren weniger als Schneewittchen: 47 − 9 = 38."
+    },
+    {
+      "number": 11,
+      "text": "Du siehst vier Figuren mit je einer Zahl darin. Bei wie vielen Figuren ist die Anzahl der Seiten genauso groß wie die Zahl in der Figur?",
+      "diagram": "number_shapes",
+      "options": ["0", "1", "2", "3", "4"],
+      "answer": "B",
+      "solution": "Die beiden Dreiecke haben je 3 Seiten, enthalten aber 2 und 1. Das Rechteck mit der 0 hat 4 Seiten. Nur beim Quadrat mit der 4 stimmt die Zahl mit der Seitenzahl überein."
+    },
+    {
+      "number": 12,
+      "text": "Auf dem Tauschmarkt bekommt man für 2 Bananen 8 Mandarinen. Wie viele Mandarinen bekommt man für 3 Bananen?",
+      "options": ["5", "10", "11", "12", "13"],
+      "answer": "D",
+      "solution": "Für 1 Banane gibt es 4 Mandarinen. Für 3 Bananen gibt es 4 + 4 + 4 = 12 Mandarinen."
+    },
+    {
+      "number": 13,
+      "text": "Beim Fasching tanzen 30 Kinder gleichzeitig auf der Bühne. 12 Kinder tanzen allein, die anderen bilden Paare. Wie viele Paare tanzen auf der Bühne?",
+      "options": ["7", "8", "9", "12", "18"],
+      "answer": "C",
+      "solution": "30 − 12 = 18 Kinder tanzen in Paaren. Immer 2 Kinder bilden ein Paar: 18 : 2 = 9 Paare."
+    },
+    {
+      "number": 14,
+      "text": "Die Zauberlehrlinge gehen an drei Tagen in der Woche zur Schule. Ihr Stundenplan steht unten. Meister Hokuspokus unterrichtet Geheimschrift und Besenflug. Wie viele Stunden unterrichtet er pro Woche?",
+      "diagram": "timetable",
+      "options": ["4", "5", "7", "8", "9"],
+      "answer": "B",
+      "solution": "Geheimschrift steht dreimal im Plan, Besenflug zweimal. Meister Hokuspokus unterrichtet also 3 + 2 = 5 Stunden."
+    },
+    {
+      "number": 15,
+      "text": "Professor Pfiffigs Computer ist kaputt. Nach jedem getippten Buchstaben erscheint auf dem Bildschirm sofort noch ein zusätzliches A. Was steht auf dem Bildschirm, wenn er TAL tippt?",
+      "options": ["ATALA", "TAALA", "TAAALA", "TAAL", "ATAAALA"],
+      "answer": "C",
+      "solution": "Aus T wird TA, aus A wird AA und aus L wird LA. Hintereinander ergibt das TA + AA + LA = TAAALA."
+    },
+    {
+      "number": 16,
+      "text": "Tom und Karl essen zusammen 18 Knödel. Karl isst doppelt so viele wie Tom. Wie viele Knödel isst Karl?",
+      "options": ["6", "8", "9", "12", "15"],
+      "answer": "D",
+      "solution": "Teile die 18 Knödel in 3 gleich große Portionen: je 6 Knödel. Tom bekommt eine Portion, Karl zwei. Karl isst 6 + 6 = 12 Knödel."
+    },
+    {
+      "number": 17,
+      "text": "Omas Rührei-Rezept für 2 Personen braucht 6 Eier, eine Prise Salz und einen Teelöffel Öl. Wie viele Eier braucht Oma, wenn sie Rührei für 6 Personen macht?",
+      "options": ["12", "15", "18", "24", "30"],
+      "answer": "C",
+      "solution": "6 Personen sind dreimal so viele wie 2 Personen. Oma braucht daher 6 + 6 + 6 = 18 Eier."
+    },
+    {
+      "number": 18,
+      "text": "Ein Kind geht um fünf nach sieben von zu Hause los. Der Schulweg dauert 5 Minuten. Wie viele Minuten vor acht Uhr kommt das Kind in der Schule an?",
+      "options": ["10", "15", "40", "50", "70"],
+      "answer": "D",
+      "solution": "Das Kind geht um 7:05 Uhr los und kommt um 7:10 Uhr an. Bis 8:00 Uhr fehlen noch 50 Minuten."
+    },
+    {
+      "number": 19,
+      "text": "Susanne und Katharina schreiben zweistellige Zahlen mit den Ziffern 4, 6 und 9 auf. Susanne schreibt alle solchen Zahlen auf; eine Ziffer darf auch zweimal vorkommen. Katharina schreibt nur Zahlen mit zwei verschiedenen Ziffern auf. Wie viele Zahlen stehen nur bei Susanne?",
+      "options": ["1", "3", "5", "6", "9"],
+      "answer": "B",
+      "solution": "Nur Susanne schreibt die Zahlen mit zwei gleichen Ziffern auf: 44, 66 und 99. Das sind 3 Zahlen."
+    },
+    {
+      "number": 20,
+      "text": "Im Finale eines Schönheitswettbewerbs stehen eine Eule, ein Fuchs, ein Pavian und ein Löwe. Eines der vier Tiere gewinnt. Danach sagen die Eule und der Löwe: „Der Fuchs hat gewonnen.“ Der Fuchs sagt: „Die Eule hat gewonnen.“ Der Pavian sagt: „Ich habe gewonnen.“ Keines der Tiere sagt die Wahrheit. Wer hat gewonnen?",
+      "options": ["die Eule", "der Fuchs", "der Pavian", "der Löwe", "nicht bestimmbar"],
+      "answer": "D",
+      "solution": "Der Fuchs, die Eule und der Pavian können nicht gewonnen haben, denn die Aussagen über sie sind falsch. Übrig bleibt der Löwe."
+    },
+    {
+      "number": 21,
+      "text": "Dieses Jahr findet der Mathe-Knobelwettbewerb zum 25. Mal statt. Das diesjährige Finale steht noch bevor. In den ersten beiden Jahren gab es kein Finale. Zweimal fand das Finale in Bremen statt, einmal in Hannover. Alle übrigen bisherigen Finalrunden waren in Kalkar. Wie viele Finalrunden fanden bisher in Kalkar statt?",
+      "options": ["19", "20", "21", "22", "23"],
+      "answer": "A",
+      "solution": "Das Finale des 25. Wettbewerbs steht noch bevor. Bisher gab es 24 Wettbewerbe, davon 2 ohne Finale. Von den 22 bisherigen Finalrunden waren 2 in Bremen und 1 in Hannover: 24 − 2 − 2 − 1 = 19 in Kalkar."
+    },
+    {
+      "number": 22,
+      "text": "Reh Fritzi schafft in einer Stunde eine doppelt so lange Strecke wie Elefant Oskar. Oskar braucht vom Zauberwald zum Wolkenberg 2 Stunden. Wie lange braucht Fritzi für dieselbe Strecke?",
+      "options": ["½ Stunde", "1 Stunde", "2 Stunden", "4 Stunden", "8 Stunden"],
+      "answer": "B",
+      "solution": "Fritzi ist doppelt so schnell und braucht deshalb nur halb so lange: die Hälfte von 2 Stunden ist 1 Stunde."
+    },
+    {
+      "number": 23,
+      "text": "Anna und ihr kleiner Bruder hatten Besuch. Nachdem alle Gäste gegangen sind, erzählt Anna ihrer Oma am Telefon: „Wir hatten mehr als sechs Gäste.“ Ihr Bruder sagt: „Wir hatten mehr als fünf Gäste.“ Genau eine der beiden Aussagen stimmt. Wie viele Gäste waren da?",
+      "options": ["4", "5", "6", "7", "nicht bestimmbar"],
+      "answer": "C",
+      "solution": "Bei höchstens 5 Gästen wären beide Aussagen falsch. Bei mindestens 7 wären beide wahr. Bei genau 6 Gästen stimmt nur die Aussage des Bruders."
+    },
+    {
+      "number": 24,
+      "text": "Michael denkt sich ein Wort mit fünf Buchstaben aus. Florian nennt andere Wörter mit fünf Buchstaben. Michael sagt jeweils, wie viele Buchstaben des genannten Wortes auch in seinem geheimen Wort vorkommen. Die Stelle im Wort ist dabei egal. Florian nennt BLUME und KREIS. Michael antwortet beide Male: „Zwei.“ Welches Wort kann Michael gemeint haben?",
+      "options": ["LAMPE", "TIGER", "MULDE", "STUHL", "WOLKE"],
+      "answer": "E",
+      "solution": "WOLKE hat mit BLUME die Buchstaben L und E gemeinsam, mit KREIS die Buchstaben K und E. Die Anzahlen für die anderen Wörter sind: LAMPE 3/1, TIGER 1/3, MULDE 4/1 und STUHL 2/1. Nur WOLKE passt zu beiden Hinweisen."
+    },
+    {
+      "number": 25,
+      "text": "In der letzten Reihe eines Kinos stehen 14 Stühle nebeneinander. Neben jedem Stuhl muss mindestens ein direkt benachbarter Stuhl frei sein. Das gilt auch für die freien Stühle; am Rand gibt es nur einen Nachbarstuhl. Wie viele Stühle können höchstens besetzt sein?",
+      "options": ["5", "6", "7", "8", "9"],
+      "answer": "B",
+      "solution": "Höchstens 6 Stühle können besetzt sein. Ein Beispiel (B = besetzt, F = frei): B F F B B F F B B F F B F F. Freie Stühle müssen in Gruppen von mindestens zwei stehen. Bei 7 oder mehr besetzten Stühlen bleiben höchstens 7 freie Stühle, also höchstens 3 freie Gruppen. Zwischen freien Gruppen passen höchstens 2 besetzte Stühle, an die beiden Ränder je höchstens 1. Mit 3 freien Gruppen sind so höchstens 6 besetzte Stühle möglich."
+    }
+  ]
+}

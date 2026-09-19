@@ -89,8 +89,12 @@ determined from the request. Adapt page counts to the new paper's length.
   for each batch. Keep reproducible PDF-generation code in the repository.
 - The existing scripts target the first batch. Extend or parameterize them as
   needed while keeping existing booklets reproducible and preserving their files.
-- Update the English README catalog with links to each new PDF and its sources,
-  its page breakdown, and any changes to build or verification commands.
+- Keep the English root README generic: project purpose, collection navigation,
+  repository structure, and shared build or verification instructions. Do not
+  add individual booklet descriptions, page breakdowns, or adaptation examples.
+- Keep booklet-specific details, source links, and any batch-specific commands
+  in the corresponding batch folder. Update shared README instructions only
+  when the project-wide workflow changes.
 - Maintain reusable agent instructions here rather than adding conversation
   transcripts or original-request sections to the README.
 

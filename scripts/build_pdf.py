@@ -18,7 +18,7 @@ from reportlab.platypus import (
 )
 
 ROOT = Path(__file__).resolve().parents[1]
-BATCH = ROOT / "competitions/zrinyi/2014/grade-02/county"
+BATCH = ROOT / "competitions/zrinyi/2014/grade-02/regional"
 OUTPUT = BATCH / "mathe-knobelei-2014-klasse-2-regionalrunde.de.pdf"
 INK = colors.HexColor("#173c46")
 PALE = colors.HexColor("#edf3f4")

@@ -1,55 +1,55 @@
-# Math – Mathe-Knobeleien für Kinder
+# Math – Math Puzzles for Children
 
-Deutschsprachige Übungshefte mit Aufgaben aus verschiedenen
-Mathematikwettbewerben, kindgerechten Illustrationen, Antwortbögen und
-Lösungen. Namen, Orte und sprachabhängige Rätsel werden für deutschsprachige
-Kinder angepasst; mathematische Ergebnisse und richtige Antwortbuchstaben
-bleiben erhalten.
+German-language practice booklets featuring exercises from different math
+competitions, child-friendly illustrations, answer sheets, and solutions.
+Names, places, and language-dependent puzzles are adapted for German-speaking
+children while preserving mathematical results and correct answer letters.
 
-## Erstes Heft: Regionalrunde 2014, Klasse 2
+## First booklet: 2014 regional round, grade 2
 
-**[PDF öffnen / herunterladen](competitions/zrinyi/2014/grade-02/county/mathe-knobelei-2014-klasse-2-regionalrunde.de.pdf)**
+**[Open / download the PDF](competitions/zrinyi/2014/grade-02/regional/mathe-knobelei-2014-klasse-2-regionalrunde.de.pdf)**
 
-Grundlage: **Zrínyi Ilona Matematikaverseny 2014 – Megyei forduló – 2. osztály**.
-Das Heft enthält alle **25 Aufgaben** dieser Runde in derselben Reihenfolge.
+Based on the **2014 Zrínyi Ilona Mathematics Competition – regional round
+(Megyei forduló) – grade 2**. The booklet includes all **25 exercises** from
+this round in their original order.
 
-| Seiten | Inhalt |
+| Pages | Contents |
 |---|---|
-| 1–6 | Deutsche Aufgaben mit neu gezeichneten Abbildungen und übersetztem Stundenplan |
-| 7 | **Leerer Antwortbogen im Zrínyi-Kódlap-Stil** zum Ausfüllen |
-| 8 | Quellen und Hinweise für Erwachsene |
-| 9–10 | Kurze deutsche Lösungswege zu allen 25 Aufgaben |
-| 11 | **Ausgefüllter Lösungsbogen im Zrínyi-Kódlap-Stil**, ganz am Ende |
+| 1–6 | German exercises with redrawn diagrams and a translated timetable |
+| 7 | **Blank Zrínyi-Kódlap-style answer sheet** to fill in |
+| 8 | Sources and notes for adults |
+| 9–10 | Short German solution explanations for all 25 exercises |
+| 11 | **Completed Zrínyi-Kódlap-style solution sheet**, at the very end |
 
-Die Antwortbögen haben die A–E-Kästchen und Fünferblöcke der offiziellen
-Vorlage: Aufgaben 1–15 links und 16–25 rechts. Sie sind für den Ausdruck auf
-**A4** und das handschriftliche Ausfüllen vorgesehen. Zum Üben die Seiten
-1–7 ausdrucken; die Lösungsseiten getrennt aufbewahren. Die Schriften sind
-eingebettet, die Abbildungen sind skalierbar und schwarz-weiß druckbar.
+The answer sheets follow the official template's A–E boxes and groups of five:
+exercises 1–15 on the left and 16–25 on the right. They are designed for
+**A4 printing** and handwritten answers. Print pages 1–7 for practice and keep
+the solutions separate. Fonts are embedded, and illustrations are scalable
+and suitable for black-and-white printing.
 
-- [Bearbeitbare Aufgaben und Lösungen (JSON)](competitions/zrinyi/2014/grade-02/county/exercises.de.json)
-- [Quellen, Bildnachweise und Lokalisierungsprotokoll](competitions/zrinyi/2014/grade-02/county/SOURCES.md)
+- [Editable exercises and solutions (German JSON)](competitions/zrinyi/2014/grade-02/regional/exercises.de.json)
+- [Sources, illustration credits, and localization notes (in German)](competitions/zrinyi/2014/grade-02/regional/SOURCES.md)
 
-### Geprüfte Anpassungen
+### Verified adaptations
 
-- **Ortsnamen:** unter anderem Kecskemét → Kalkar, Veszprém → Bremen und
-  Székesfehérvár → Hannover; auch die erfundenen Landschaftsnamen sind deutsch.
-- **Aufgabe 2:** KALKAR enthält wie der Originalname zwei K.
-- **Aufgabe 15:** Das deutsche Wort TAL bewahrt die Einfüge-Regel; die Ausgabe
-  lautet TAAALA, Antwort C.
-- **Aufgabe 24:** BLUME und KREIS mit fünf deutschen Antwortwörtern; nur WOLKE
-  teilt mit beiden Wörtern jeweils zwei Buchstaben, Antwort E.
-- **Aufgaben 21 und 25:** Der Zeitpunkt vor dem diesjährigen Finale sowie die
-  Nachbarregel auch für freie Stühle sind ausdrücklich formuliert.
+- **Place names:** examples include Kecskemét → Kalkar, Veszprém → Bremen,
+  and Székesfehérvár → Hannover. Fictional geographical names are also German.
+- **Exercise 2:** KALKAR contains two Ks, just like the original place name.
+- **Exercise 15:** The German word TAL preserves the letter-insertion rule;
+  the output is TAAALA, answer C.
+- **Exercise 24:** BLUME and KREIS are paired with five German answer words.
+  Only WOLKE shares exactly two letters with each clue word, giving answer E.
+- **Exercises 21 and 25:** The timing before this year's final and the
+  neighboring-seat rule applying to empty seats are stated explicitly.
 
-Alle 25 Antwortbuchstaben stimmen mit dem in zwei Onlinequellen
-wiedergegebenen Schlüssel überein. Die Lösungen sind zusätzlich unabhängig
-nachgerechnet; für die Kinoaufgabe werden alle 16.384 Belegungen geprüft.
+All 25 answer letters match the published key reproduced by two online
+sources. Solutions have also been independently checked; the cinema seating
+problem is verified by examining all 16,384 possible arrangements.
 
-## PDF selbst erzeugen
+## Build the PDF
 
-Voraussetzungen: Python **3.10+**, `venv` und die Schrift **DejaVu Sans**
-(unter Debian/Ubuntu Paket `fonts-dejavu-core`).
+Requirements: Python **3.10+**, `venv`, and the **DejaVu Sans** font
+(`fonts-dejavu-core` on Debian/Ubuntu).
 
 ```bash
 python3 -m venv .venv
@@ -58,31 +58,31 @@ python3 -m venv .venv
 .venv/bin/python scripts/verify_batch.py
 ```
 
-Bei einem anderen Schriftverzeichnis:
+To use a different font directory:
 
 ```bash
-.venv/bin/python scripts/build_pdf.py --font-dir /pfad/zu/dejavu
+.venv/bin/python scripts/build_pdf.py --font-dir /path/to/dejavu
 ```
 
-Das Verzeichnis muss `DejaVuSans.ttf` und `DejaVuSans-Bold.ttf` enthalten.
-Der Build benötigt nach der Installation keinen Netzwerkzugriff und schreibt
-die PDF direkt neben die JSON-Datei. Er ist bei gleicher Python-, Paket- und
-Schriftversion deterministisch.
+The directory must contain `DejaVuSans.ttf` and `DejaVuSans-Bold.ttf`.
+After dependencies are installed, the build runs without network access and
+writes the PDF alongside the JSON file. Output is deterministic when using
+the same Python, package, and font versions.
 
-Die Prüfung kontrolliert mathematische Ergebnisse, deutsche Buchstabenrätsel,
-Seitenaufteilung, eingebettete Schriften und Textränder. Außerdem liest sie die
-**tatsächlich gezeichneten Kästchen und Kreuze aus der PDF** aus: 125 leere
-Kästchen auf dem Übungsbogen und genau 25 richtige Kreuze auf dem Lösungsbogen.
-Bei der Ersterstellung wurden alle PDF-Seiten zusätzlich visuell geprüft.
+Verification checks mathematical results, German letter puzzles, pagination,
+embedded fonts, and text boundaries. It also reads the **actual boxes and
+crosses drawn in the PDF**: 125 empty boxes on the practice answer sheet and
+exactly 25 correct crosses on the solution sheet. Every PDF page was also
+visually inspected when the booklet was first created.
 
-## Struktur für weitere Hefte
+## Structure for future booklets
 
 ```text
 competitions/
   zrinyi/
     2014/
       grade-02/
-        county/
+        regional/
           exercises.de.json
           SOURCES.md
           mathe-knobelei-2014-klasse-2-regionalrunde.de.pdf
@@ -92,14 +92,15 @@ scripts/
 requirements.txt
 ```
 
-Weitere Wettbewerbe, Jahre, Klassen und Runden bekommen eigene Unterordner.
-Die beiden vorhandenen Skripte sind auf das erste Heft zugeschnitten; für neue
-Hefte werden Inhalt, Ausgabeziel und fachliche Prüfungen passend erweitert.
+Additional competitions, years, grades, and rounds get their own subfolders.
+Use `regional` for regional rounds. The two existing scripts are tailored to
+the first booklet; extend their content, output paths, and mathematical checks
+as needed for future batches.
 
-## Wiederverwendbarer Auftrag für das nächste Heft
+## Reusable prompt for the next batch
 
-Die Platzhalter vor der Verwendung ersetzen. Der folgende Auftrag enthält
-auch die nachträglichen Präzisierungen zur Runde und zu den beiden Kódlap-Bögen.
+Replace the placeholders before use. This prompt includes the follow-up
+requirements specifying the round and both Kódlap-style answer sheets.
 
 ```text
 Add a new batch to the existing math repository containing German-language
@@ -108,7 +109,7 @@ math competition exercises for children.
 Competition: [COMPETITION]
 Year: [YEAR]
 Grade: [GRADE]
-Round: [ROUND — e.g. Megyei forduló / county round]
+Round: [ROUND — e.g. Megyei forduló / regional round]
 Original language: [LANGUAGE — e.g. Hungarian]
 
 1. Search online for the exact original paper, its exercise images/diagrams,
@@ -141,18 +142,19 @@ Original language: [LANGUAGE — e.g. Hungarian]
 9. Keep editable exercise data and reproducible PDF-generation code in the
    repository. Render and visually inspect the PDF, including diagrams,
    page breaks, umlauts, the blank form, and the completed answer marks.
-10. Update the README catalog with the new PDF and source notes, and retain
-    this reusable prompt for future batches.
+10. Keep the README entirely in English. Update its catalog with the new PDF
+    and source notes, and retain this reusable prompt for future batches.
+    Use regional as the folder name for regional rounds.
 
 For the first batch these settings were:
 Zrínyi Ilona Matematikaverseny / 2014 / grade 2 / Megyei forduló / Hungarian.
 ```
 
-### Ursprünglicher Auftrag (unverändert)
+### Original request (verbatim)
 
 > create a new github repo called math and clone it to math project. This repo should hold math exercises from different math competitions in german for kids. As first batch please add a german PDF based on 2014 Zrínyi Ilona Matematikaverseny for 2.rd class kids (do online search for images and solutions) including a solution sheet on the end. You have to translate from hungarian to german. But important. You must traslate all hungarian names including geographic names to similar style german. So all exercises should look like originally created for german kids. Also hungarian exercises based on words should be adjusted to use german words instead. But important that translation and any language based adjustment should keep the correct solution intact. Lastly add this propts to reamde itself so we can reuse it for next batch.
 
-Nachträgliche Ergänzungen (unverändert):
+Follow-up requirements (verbatim):
 
 > I forgot to say "Megyei fordulo"
 
@@ -160,8 +162,13 @@ Nachträgliche Ergänzungen (unverändert):
 
 > Please Actualy add to the PDF a Zrinyi empty kodalp as well to fill in
 
-## Herkunft
+> can we avoid using county please? It's way  to close to country.
 
-Die Sammlung enthält inoffizielle deutsche Bearbeitungen. Die erste Vorlage
-stammt von der **MATEGYE Alapítvány**. Quellen und Veränderungen sind pro Heft
-dokumentiert; für die Originalaufgaben wird keine freie Lizenz behauptet.
+> Also reamede must be fully in english
+
+## Attribution
+
+This collection contains unofficial German adaptations. The first original
+paper was published by **MATEGYE Alapítvány**. Sources and adaptations are
+documented for each booklet; no open license is claimed for the original
+competition material.

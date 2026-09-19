@@ -1,79 +1,78 @@
-# Quellen und Bearbeitungsprotokoll
+# Sources and Adaptation Notes
 
-## Identifikation
+## Identification
 
-- **Wettbewerb:** Zrínyi Ilona Matematikaverseny, 2014.
-- **Klassenstufe:** 2. osztály (2. Klasse).
-- **Runde:** **Megyei forduló**, hier als „Regionalrunde“ bezeichnet.
-- **Umfang:** alle 25 Aufgaben dieser Runde, in Originalreihenfolge.
-- **Originalherausgeber:** MATEGYE Alapítvány, Kecskemét, 2014.
-- **Zusammenstellung laut Titelblatt:** Székeli Andrea.
-- **Quellen abgerufen:** 19. September 2026.
+- **Competition:** Zrínyi Ilona Matematikaverseny, 2014.
+- **Grade:** 2 (original label: “2. osztály”).
+- **Round:** **Megyei forduló** (regional round), labeled “Regionalrunde” in the German booklet.
+- **Scope:** all 25 exercises from this round, in their original order.
+- **Original publisher:** MATEGYE Alapítvány, Kecskemét, 2014.
+- **Compiled by, according to the cover:** Székeli Andrea.
+- **Sources accessed:** September 19, 2026.
 
-## Originalaufgaben und Bilder
+## Original exercises and illustrations
 
-Die [Sammlung „Matek Kicsiknek“](https://matekkicsiknek.webnode.hu/zrinyi/)
-verlinkt unter **2014 / 2. osztály megyei 2014–2018** den
-[Originalscan als PDF](https://fe2d198f3f.clvaw-cdnwnd.com/f4c1eb687f8ffbeb900731e24605c892/200000082-640486404a/Zr%C3%ADnyi%20Ilona%20matekverseny%202%20oszt%C3%A1ly%202014-2018%20%282%29.pdf?ph=fe2d198f3f).
+The [Matek Kicsiknek collection](https://matekkicsiknek.webnode.hu/zrinyi/)
+links to the [original scanned PDF](https://fe2d198f3f.clvaw-cdnwnd.com/f4c1eb687f8ffbeb900731e24605c892/200000082-640486404a/Zr%C3%ADnyi%20Ilona%20matekverseny%202%20oszt%C3%A1ly%202014-2018%20%282%29.pdf?ph=fe2d198f3f)
+under **2014 / 2. osztály megyei 2014–2018** (grade 2, regional rounds, 2014–2018).
 
-Die Datei umfasst 12 PDF-Seiten mit mehreren Jahrgängen. **Nur die ersten
-beiden PDF-Seiten gehören zur hier verwendeten Ausgabe 2014:**
+The file contains 12 PDF pages covering several years. **Only the first two
+PDF pages belong to the 2014 paper used here:**
 
-- PDF-Seite 1: links Aufgaben 20–25, rechts Titelblatt mit Jahr, Runde und Klasse.
-- PDF-Seite 2: links Aufgaben 1–11, rechts Aufgaben 12–19.
+- PDF page 1: exercises 20–25 on the left; cover with the year, round, and grade on the right.
+- PDF page 2: exercises 1–11 on the left; exercises 12–19 on the right.
 
-SHA-256 der abgerufenen Originaldatei:
+SHA-256 of the downloaded original file:
 
 ```text
 5f831b37d9210ad5931dd67028b5227e14bb12295f2c6ffbb348127cd3be23a8
 ```
 
-Die Bilder zu Aufgaben **1, 3, 7, 9 und 11** wurden anhand dieses Scans als
-skalierbare Vektorgrafiken neu gezeichnet. Aufgabe **14** enthält eine neu
-gesetzte, übersetzte Tabelle. Die mathematisch relevanten Merkmale bleiben
-erhalten: vier gedrehte Nilpferde und ein Löwe an Position D; zwei gleiche
-Gesichter; sechs Dreiecke und fünf Kreise; ein 4×4-Raster; Figuren mit den
-Seitenzahlen 3/4/3/4 und den eingetragenen Zahlen 2/0/1/4; unveränderte
-Positionen der neun Stundenplanfächer. Der Zeichen-Code steht in
+Illustrations for exercises **1, 3, 7, 9, and 11** were redrawn as scalable
+vector graphics using this scan as a reference. Exercise **14** contains a
+newly typeset, translated table. All mathematically relevant features are
+preserved: four rotated hippos and a lion at position D; two identical faces;
+six triangles and five circles; a 4×4 grid; shapes with 3/4/3/4 sides and the
+numbers 2/0/1/4 inside; and unchanged positions of the nine timetable entries.
+The drawing code is in
 [`scripts/build_pdf.py`](../../../../../scripts/build_pdf.py).
 
-## Antwortschlüssel
+## Answer key
 
-Der veröffentlichte Schlüssel wird in zwei online zugänglichen Quellen
-übereinstimmend wiedergegeben:
+Two accessible online sources reproduce the same published answer key:
 
-1. [Matek Kicsiknek, Abschnitt 2014, 2. Klasse](https://matekkicsiknek.webnode.hu/zrinyi/).
-2. [„Zrínyi MEGOLDÓKULCS 2014“, Textvorschau](https://pdfcoffee.com/zrinyi-megoldokulcs-2014-pdf-free.html),
-   ausdrücklich beschriftet mit „Megyei forduló / 2. évfolyam“.
+1. [Matek Kicsiknek, 2014 section, grade 2](https://matekkicsiknek.webnode.hu/zrinyi/).
+2. [“Zrínyi MEGOLDÓKULCS 2014” (answer key), text preview](https://pdfcoffee.com/zrinyi-megoldokulcs-2014-pdf-free.html),
+   explicitly labeled “Megyei forduló / 2. évfolyam” (regional round / grade 2).
 
 ```text
-Aufgaben  1– 5: DCBCD
-Aufgaben  6–10: EBBEC
-Aufgaben 11–15: BDCBC
-Aufgaben 16–20: DCDBD
-Aufgaben 21–25: ABCEB
+Exercises  1– 5: DCBCD
+Exercises  6–10: EBBEC
+Exercises 11–15: BDCBC
+Exercises 16–20: DCDBD
+Exercises 21–25: ABCEB
 ```
 
-Diese Funde sind Wiederveröffentlichungen, kein direkt vom Veranstalter
-abgerufener Lösungsschlüssel. Alle 25 Lösungen wurden zusätzlich inhaltlich
-nachgerechnet bzw. logisch überprüft. Die deutschen Lösungswege wurden für
-dieses Heft neu formuliert.
+These are republications, rather than an answer key retrieved directly from
+the organizer. All 25 solutions were also independently checked through
+calculation or logical reasoning. The German solution explanations were
+written specifically for this booklet.
 
-## Leerer und ausgefüllter Kódlap
+## Blank and completed Kódlap-style answer sheets
 
-Vorlage: [offizieller Muster-Kódlap der MATEGYE Alapítvány](http://www.mategye.hu/download/zrinyi/minta_kodlap.pdf).
-Der Server war beim Abruf über HTTP erreichbar, über HTTPS nicht.
+Template: [official sample Kódlap from MATEGYE Alapítvány](http://www.mategye.hu/download/zrinyi/minta_kodlap.pdf).
+At the time of retrieval, the server was accessible over HTTP but not HTTPS.
 
-Übernommenes Layout: Aufgaben 1–15 links, 16–25 rechts; Fünferblöcke mit den
-Spalten A–E und quadratischen Ankreuzfeldern. Die Vorlage hat auch Aufgaben
-26–30; diese entfallen für die hier vorliegenden 25 Aufgaben. Beschriftungen
-und Ausfüllhinweise sind deutsch. Der leere Bogen steht auf Seite 7, derselbe
-Bogentyp mit den Lösungskreuzen auf der letzten Seite (11). Die Formulare
-sind zum Ausdrucken und handschriftlichen Ausfüllen gedacht.
+The adapted layout places exercises 1–15 on the left and 16–25 on the right,
+in groups of five with A–E columns and square checkboxes. The template also
+includes exercises 26–30; these are omitted for this 25-exercise paper. Labels
+and instructions are in German. The blank sheet appears on page 7, and the
+same form with the correct answers marked appears on the final page (11).
+The forms are intended for printing and handwritten answers.
 
-## Lokalisierungen
+## Localization
 
-| Original | Deutsche Bearbeitung | Aufgabe |
+| Original | German adaptation | Exercise |
 |---|---|---|
 | Kecskemét / KECSKEMÉT | Kalkar / KALKAR | 2, 21 |
 | Bazsi | Ben | 4 |
@@ -87,26 +86,26 @@ sind zum Ausdrucken und handschriftlichen Ausfüllen gedacht.
 | Veszprém, Székesfehérvár | Bremen, Hannover | 21 |
 | Bambi, Dumbo | Reh Fritzi, Elefant Oskar | 22 |
 | Nekeresd-erdő, Seholsincs-hegy | Zauberwald, Wolkenberg | 22 |
-| Anna | Anna (auch ein geläufiger deutscher Name) | 23 |
+| Anna | Anna (also a common German name) | 23 |
 | Misi, Flóri | Michael, Florian | 24 |
 
-Der Wettbewerb heißt im Aufgabentext „Mathe-Knobelwettbewerb“. Der echte
-ungarische Wettbewerbsname und die echten Namen des Herausgebers bleiben
-ausschließlich zur nachvollziehbaren Quellenangabe erhalten.
+The competition is called “Mathe-Knobelwettbewerb” in the exercise text.
+The authentic Hungarian competition and publisher names are retained only
+in source credits so the material's origin remains traceable.
 
-### Sprachabhängige Aufgaben
+### Language-dependent exercises
 
-- **2:** KECSKEMÉT und KALKAR enthalten jeweils genau zwei K; Antwort **C**.
-- **15:** LAP → TAL. Der mittlere Buchstabe bleibt A. Ein zusätzliches A
-  nach jedem eingegebenen Buchstaben ergibt **TAAALA**, weiterhin Antwort
-  **C**. Alle fünf Antwortmöglichkeiten wurden konsistent mit L → T,
-  P → L und unverändertem A umgestellt.
-- **24:** Statt MÉZES und MÁLNA werden **BLUME und KREIS** genannt. Die
-  Antwortmöglichkeiten sind vollständig durch deutsche Wörter ersetzt.
-  Alle verwendeten Wörter haben fünf verschiedene Buchstaben, sodass die
-  Zählregel auch ohne Sonderregeln zu Buchstabenwiederholungen eindeutig ist.
+- **2:** KECSKEMÉT and KALKAR each contain exactly two Ks; answer **C**.
+- **15:** LAP → TAL. The middle letter remains A. Inserting an extra A after
+  every typed letter produces **TAAALA**, still answer **C**. All five answer
+  options were consistently adapted by mapping L → T and P → L while keeping
+  A unchanged.
+- **24:** **BLUME and KREIS** replace MÉZES and MÁLNA. All answer options
+  are replaced with German words. Every word used has five distinct letters,
+  making the counting rule unambiguous without special rules for repeated
+  letters.
 
-| Antwort | Wort | Gemeinsam mit BLUME | Gemeinsam mit KREIS |
+| Answer | Word | Letters shared with BLUME | Letters shared with KREIS |
 |---|---|---:|---:|
 | A | LAMPE | 3 | 1 |
 | B | TIGER | 1 | 3 |
@@ -114,21 +113,21 @@ ausschließlich zur nachvollziehbaren Quellenangabe erhalten.
 | D | STUHL | 2 | 1 |
 | **E** | **WOLKE** | **2 (L, E)** | **2 (K, E)** |
 
-  Damit bleiben die beiden Hinweise „2“, die Art des Rätsels und die
-  eindeutige richtige Antwort **E** erhalten. Die falschen Wörter und ihre
-  jeweiligen Überlappungszahlen sind neu gewählt.
+Both clues (“2”), the type of puzzle, and the unique correct answer **E**
+are preserved. The incorrect words and their respective overlap counts
+were newly chosen.
 
-### Wichtige Bedeutungsdetails
+### Important interpretation details
 
-- **21:** Die Regionalrunde findet vor dem Finale statt. „Bisher“ umfasst
-  daher nur 24 abgeschlossene Wettbewerbsjahre: **24 − 2 − 2 − 1 = 19**,
-  Antwort **A**. Dieser im Original zeitlich vorausgesetzte Umstand wird
-  ausdrücklich erklärt, damit die zeitlose Übungsfassung eindeutig bleibt.
-- **25:** „Neben jedem Stuhl“ betrifft **auch freie Stühle**. Eine Deutung
-  nur für besetzte Stühle würde das Problem verändern. Mit der vollständigen
-  Regel sind höchstens **6** Plätze besetzt, Antwort **B**. Alle 2¹⁴ möglichen
-  Belegungen werden durch das Prüfskript vollständig geprüft.
+- **21:** The regional round takes place before the final. “So far” therefore
+  covers only 24 completed competition years: **24 − 2 − 2 − 1 = 19**,
+  answer **A**. This timing, implicit in the original, is stated explicitly
+  so the practice version remains unambiguous whenever it is used.
+- **25:** “Next to every chair” applies **to empty chairs too**. Applying the
+  rule only to occupied chairs would change the problem. Under the full
+  rule, at most **6** seats can be occupied, giving answer **B**. The
+  verification script checks all 2¹⁴ possible seating arrangements.
 
-Die Bearbeitung ist inoffiziell. Rechte an den Originalaufgaben verbleiben
-bei den jeweiligen Rechteinhabern; diese Sammlung behauptet keine freie
-Lizenz für fremdes Ausgangsmaterial.
+This adaptation is unofficial. Rights to the original exercises remain with
+their respective holders; this collection does not claim an open license
+for third-party source material.

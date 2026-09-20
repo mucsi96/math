@@ -16,6 +16,7 @@ from reportlab.platypus import (
     Flowable, KeepTogether, PageBreak, Paragraph, SimpleDocTemplate,
     Spacer, Table, TableStyle,
 )
+from diagrams_2015 import HEIGHTS as HEIGHTS_2015, draw as draw_2015
 
 ROOT = Path(__file__).resolve().parents[1]
 BATCH = ROOT / "competitions/zrinyi/2014/grade-02/regional"
@@ -86,7 +87,7 @@ def smile(c, x, y):
 
 class Diagram(Flowable):
     HEIGHTS = {"animals": 93, "smile_sum": 54, "triangles_circles": 113,
-               "floor_grid": 103, "number_shapes": 68}
+               "floor_grid": 103, "number_shapes": 68, **HEIGHTS_2015}
 
     def __init__(self, kind):
         super().__init__()
@@ -99,7 +100,9 @@ class Diagram(Flowable):
         c.setStrokeColor(colors.black)
         c.setFillColor(colors.black)
         c.setLineWidth(1.15)
-        if self.kind == "animals":
+        if self.kind in HEIGHTS_2015:
+            draw_2015(c, self.kind, WIDTH)
+        elif self.kind == "animals":
             for i, rotation in enumerate((0, 90, 180, 0, -90)):
                 x = 53 + i * 99
                 c.saveState()
@@ -233,17 +236,19 @@ def footer(c, doc):
     c.line(44, 40, A4[0]-44, 40)
     c.setFillColor(INK)
     c.setFont("DejaVu", 8)
-    c.drawString(44, 26, "Mathe-Knobelei · Klasse 2 · Regionalrunde 2014")
+    c.drawString(44, 26, doc.booklet_footer)
     c.drawRightString(A4[0]-44, 26, f"Seite {doc.page}")
     c.restoreState()
 
 
-def build(font_dir):
+def build(font_dir, batch=BATCH):
     register_fonts(font_dir)
-    data = json.loads((BATCH / "exercises.de.json").read_text(encoding="utf-8"))
+    data = json.loads((batch / "exercises.de.json").read_text(encoding="utf-8"))
+    year = data["source_year"]
+    output = batch / f"mathe-knobelei-{year}-klasse-2-regionalrunde.de.pdf"
     st = styles()
     story = []
-    groups = [(1,5), (6,10), (11,13), (14,17), (18,21), (22,25)]
+    groups = data.get("exercise_pages", [(1,5), (6,10), (11,13), (14,17), (18,21), (22,25)])
     for start, end in groups:
         if story:
             story.append(PageBreak())
@@ -262,13 +267,13 @@ def build(font_dir):
                 block.append(timetable(st) if diagram == "timetable" else Diagram(diagram))
                 block.append(Spacer(1, 6))
             # Animal choices are already labelled directly beneath the pictures.
-            if ex.get("diagram") != "animals":
+            if ex.get("diagram") != "animals" and not ex.get("picture_options"):
                 block.append(options(ex, st))
             block.append(Spacer(1, 22 if start != 1 else 15))
             story.append(KeepTogether(block))
 
     story.extend([PageBreak(), Paragraph("Mein Antwortbogen", st["title"]),
-                  Paragraph("Klasse 2 · 25 Aufgaben · Regionalrunde 2014", st["subtitle"]),
+                  Paragraph(f"Klasse 2 · 25 Aufgaben · Regionalrunde {year}", st["subtitle"]),
                   Paragraph("Name: __________________________________________________", st["body"]),
                   Paragraph("Schule: ___________________________  Klasse: ______________", st["body"]),
                   Paragraph("Datum: ___________________________  Raum / Platz: __________", st["body"]),
@@ -282,23 +287,23 @@ def build(font_dir):
     story.extend([PageBreak(), Paragraph("Quellen & Hinweise", st["title"]),
                   Paragraph("Für Eltern und Lehrkräfte", st["subtitle"]),
                   Paragraph("Dieses Heft ist eine eigenständige deutsche Bearbeitung der 25 Aufgaben des "
-                            "Zrínyi Ilona Matematikaverseny 2014, 2. Klasse, Megyei forduló (Regionalrunde). "
+                            f"Zrínyi Ilona Matematikaverseny {year}, 2. Klasse, Megyei forduló (Regionalrunde). "
                             "Die Originalaufgaben stammen von der MATEGYE Alapítvány. Es handelt sich um eine "
                             "inoffizielle Übungsfassung.", st["body"]),
                   Paragraph("Die Originalabbildungen wurden anhand des online verfügbaren Scans neu gezeichnet. "
                             "Der leere und der ausgefüllte Antwortbogen folgen dem offiziellen Kódlap-Muster: "
                             "Aufgaben 1–15 links, 16–25 rechts, Kästchen A–E in Fünferblöcken.", st["body"]),
-                  Paragraph("Namen und Orte wurden deutsch lokalisiert. Die Buchstabenaufgaben 2, 15 und 24 "
+                  Paragraph(data.get("adaptation_note", "Namen und Orte wurden deutsch lokalisiert. Die Buchstabenaufgaben 2, 15 und 24 "
                             "verwenden passende deutsche Wörter. Bei Aufgabe 21 ist ausdrücklich gesagt, dass das "
                             "diesjährige Finale noch bevorsteht. Bei Aufgabe 25 gilt die Nachbarregel ausdrücklich "
-                            "auch für freie Stühle. Alle richtigen Antwortbuchstaben entsprechen dem veröffentlichten Schlüssel.", st["body"]),
+                            "auch für freie Stühle. Alle richtigen Antwortbuchstaben entsprechen dem veröffentlichten Schlüssel."), st["body"]),
                   Spacer(1, 12)])
-    for label, url in [
+    for label, url in data.get("source_links", [
         ("Originalscan und Antwortschlüssel", "https://matekkicsiknek.webnode.hu/zrinyi/"),
         ("Zweiter Fund des Antwortschlüssels", "https://pdfcoffee.com/zrinyi-megoldokulcs-2014-pdf-free.html"),
         ("Offizielles Kódlap-Muster", "http://www.mategye.hu/download/zrinyi/minta_kodlap.pdf"),
         ("Projekt, bearbeitbare Aufgaben und genaue Quellen", "https://github.com/mucsi96/math"),
-    ]:
+    ]):
         story.append(Paragraph(f'<b>{label}</b><br/><link href="{url}" color="#173c46">{url}</link>', st["small"]))
     story.extend([Spacer(1, 24), Paragraph("Ab der nächsten Seite: Lösungen", st["title"]),
                   Paragraph("Zum Üben die folgenden Seiten abtrennen oder erst nach dem Bearbeiten ansehen.", st["body"])])
@@ -309,21 +314,24 @@ def build(font_dir):
             story.append(Paragraph(f'<b>{ex["number"]}. ({ex["answer"]})</b> {escape(ex["solution"])}', st["solution"]))
 
     story.extend([PageBreak(), Paragraph("Lösungsbogen", st["title"]),
-                  Paragraph("Ausgefüllter Antwortbogen · Klasse 2 · Regionalrunde 2014", st["subtitle"]),
+                  Paragraph(f"Ausgefüllter Antwortbogen · Klasse 2 · Regionalrunde {year}", st["subtitle"]),
                   Paragraph("Vergleiche die Kreuze mit deinem Antwortbogen. Jede Aufgabe hat genau eine richtige Antwort.", st["body"]),
                   Spacer(1, 22), CodeSheet([ex["answer"] for ex in data["exercises"]]),
                   Spacer(1, 12), Paragraph("Antwortschlüssel zur Kontrolle", st["body"]),
                   Paragraph(data["published_answer_key"], st["body"])])
 
-    doc = SimpleDocTemplate(str(OUTPUT), pagesize=A4, leftMargin=44, rightMargin=44,
-                            topMargin=42, bottomMargin=55, title="Mathe-Knobelei – Klasse 2 – Regionalrunde 2014",
+    doc = SimpleDocTemplate(str(output), pagesize=A4, leftMargin=44, rightMargin=44,
+                            topMargin=42, bottomMargin=55, title=f"Mathe-Knobelei – Klasse 2 – Regionalrunde {year}",
                             author="math · Deutsche Bearbeitung nach MATEGYE", pageCompression=1,
                             invariant=1)
+    doc.booklet_footer = f"Mathe-Knobelei · Klasse 2 · Regionalrunde {year}"
     doc.build(story, onFirstPage=footer, onLaterPages=footer)
-    print(OUTPUT.relative_to(ROOT))
+    print(output.relative_to(ROOT))
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--font-dir", type=Path, default=Path("/usr/share/fonts/truetype/dejavu"))
-    build(parser.parse_args().font_dir)
+    parser.add_argument("--batch", type=Path, default=BATCH)
+    args = parser.parse_args()
+    build(args.font_dir, args.batch.resolve())

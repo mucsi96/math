@@ -3,14 +3,15 @@
 import itertools
 import json
 import re
+import argparse
+from pathlib import Path
 
 import pymupdf
 
-from build_pdf import BATCH, OUTPUT
+from build_pdf import BATCH
 
 
-def main():
-    data = json.loads((BATCH / "exercises.de.json").read_text(encoding="utf-8"))
+def verify_2014_math(data):
     exercises = data["exercises"]
     assert [e["number"] for e in exercises] == list(range(1, 26))
     assert all(len(e["options"]) == 5 for e in exercises)
@@ -64,18 +65,31 @@ def main():
     assert [i for i, pair in enumerate(counts) if pair == [2,2]] == [4]
     print("PASS: all 25 answers; German letter/word puzzles; exhaustive seating check")
 
-    doc = pymupdf.open(OUTPUT)
-    assert len(doc) == 11, f"Unexpected pagination: {len(doc)} pages"
+
+def main(batch=BATCH, render_dir=None):
+    data = json.loads((batch / "exercises.de.json").read_text(encoding="utf-8"))
+    year = data["source_year"]
+    if year == 2014:
+        verify_2014_math(data)
+    elif year == 2015:
+        from verify_2015 import verify_math
+        verify_math(data)
+    else:
+        raise ValueError(f"No independent mathematics checks for {year}")
+    key = data["published_answer_key"].replace(" ", "")
+    doc = pymupdf.open(batch / f"mathe-knobelei-{year}-klasse-2-regionalrunde.de.pdf")
     texts = [page.get_text() for page in doc]
-    expected_groups = [(1,5), (6,10), (11,13), (14,17), (18,21), (22,25)]
+    expected_groups = data.get("exercise_pages", [(1,5), (6,10), (11,13), (14,17), (18,21), (22,25)])
+    count = len(expected_groups)
+    assert len(doc) == count+5, f"Unexpected pagination: {len(doc)} pages"
     for index, (start, end) in enumerate(expected_groups):
         assert [int(n) for n in re.findall(r"^(\d+)\. ", texts[index], re.M)] == list(range(start,end+1))
-    assert "Mein Antwortbogen" in texts[6]
-    assert "Quellen & Hinweise" in texts[7]
-    assert "Lösungswege 1–13" in texts[8] and "Lösungswege 14–25" in texts[9]
+    assert "Mein Antwortbogen" in texts[count]
+    assert "Quellen & Hinweise" in texts[count+1]
+    assert "Lösungswege 1–13" in texts[count+2] and "Lösungswege 14–25" in texts[count+3]
     assert "Lösungsbogen" in texts[-1]
     for forbidden in ["Kecskemét", "Veszprém", "Székesfehérvár", "MÉZES", "MÁLNA", "Tudorka", "Misi", "Flóri"]:
-        assert forbidden not in "".join(texts[:7]), forbidden
+        assert forbidden not in "".join(texts[:count+1]), forbidden
     for page in doc:
         assert abs(page.rect.width-595.276) < .01 and abs(page.rect.height-841.89) < .01
         for block in page.get_text("dict")["blocks"]:
@@ -87,9 +101,12 @@ def main():
         for font in page.get_fonts():
             if "DejaVu" in font[3]:
                 assert doc.extract_font(font[0])[3], "Font not embedded"
+        if render_dir:
+            render_dir.mkdir(parents=True, exist_ok=True)
+            page.get_pixmap(matrix=pymupdf.Matrix(1.5, 1.5)).save(render_dir / f"page-{page.number+1:02}.png")
 
     # Read the drawn boxes and crosses from the PDF itself, not from CodeSheet state.
-    for index, filled in [(6, False), (10, True)]:
+    for index, filled in [(count, False), (count+4, True)]:
         items = [item for path in doc[index].get_drawings() for item in path["items"]]
         boxes = [item[1] for item in items if item[0] == "re"
                  and abs(item[1].width-16) < .01 and abs(item[1].height-16) < .01]
@@ -110,9 +127,13 @@ def main():
                 assert len(marks) == 1
                 decoded += marks[0]
             assert decoded == key, decoded
-    print("PASS: 11 A4 pages; exercise placement; embedded fonts; no clipped text")
+    print(f"PASS: {len(doc)} A4 pages; exercise placement; embedded fonts; no clipped text")
     print("PASS: blank Kódlap has 125 unmarked boxes; final Kódlap has the correct 25 crosses")
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--batch", type=Path, default=BATCH)
+    parser.add_argument("--render-dir", type=Path)
+    args = parser.parse_args()
+    main(args.batch, args.render_dir)

@@ -39,6 +39,9 @@ To use a different font directory:
 ```
 
 The directory must contain `DejaVuSans.ttf` and `DejaVuSans-Bold.ttf`.
+Both scripts accept `--batch <batch-directory>` to select a booklet; without
+it they use the reference batch. The verifier also accepts
+`--render-dir <directory>` to render every page for visual review.
 After dependencies are installed, the build runs without network access and
 writes the PDF alongside the JSON file. Output is deterministic when using
 the same Python, package, and font versions.

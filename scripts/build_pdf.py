@@ -17,6 +17,7 @@ from reportlab.platypus import (
     Spacer, Table, TableStyle,
 )
 from diagrams_2015 import HEIGHTS as HEIGHTS_2015, draw as draw_2015
+from diagrams_2016 import HEIGHTS as HEIGHTS_2016, draw as draw_2016
 
 ROOT = Path(__file__).resolve().parents[1]
 BATCH = ROOT / "competitions/zrinyi/2014/grade-02/regional"
@@ -87,7 +88,7 @@ def smile(c, x, y):
 
 class Diagram(Flowable):
     HEIGHTS = {"animals": 93, "smile_sum": 54, "triangles_circles": 113,
-               "floor_grid": 103, "number_shapes": 68, **HEIGHTS_2015}
+               "floor_grid": 103, "number_shapes": 68, **HEIGHTS_2015, **HEIGHTS_2016}
 
     def __init__(self, kind):
         super().__init__()
@@ -100,7 +101,9 @@ class Diagram(Flowable):
         c.setStrokeColor(colors.black)
         c.setFillColor(colors.black)
         c.setLineWidth(1.15)
-        if self.kind in HEIGHTS_2015:
+        if self.kind in HEIGHTS_2016:
+            draw_2016(c, self.kind, WIDTH)
+        elif self.kind in HEIGHTS_2015:
             draw_2015(c, self.kind, WIDTH)
         elif self.kind == "animals":
             for i, rotation in enumerate((0, 90, 180, 0, -90)):

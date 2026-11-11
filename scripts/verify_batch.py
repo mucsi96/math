@@ -74,6 +74,9 @@ def main(batch=BATCH, render_dir=None):
     elif year == 2015:
         from verify_2015 import verify_math
         verify_math(data)
+    elif year == 2016:
+        from verify_2016 import verify_math
+        verify_math(data)
     else:
         raise ValueError(f"No independent mathematics checks for {year}")
     key = data["published_answer_key"].replace(" ", "")
